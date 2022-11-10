@@ -9,21 +9,21 @@ import (
 func (h *Handler) Get(c *fiber.Ctx) error {
 	count := h.s.Get()
 	l, a := h.i18n.GetLanguagesInContext(c)
-	return result.SuccessData(h.i18n.Translate("counter_success_get", l, a), count, fiber.StatusOK)
+	return result.SuccessData(h.i18n.Translate("success_counter_get", l, a), count, fiber.StatusOK)
 }
 
 func (h *Handler) Inc(c *fiber.Ctx) error {
 	h.s.Inc()
 	count := h.s.Get()
 	l, a := h.i18n.GetLanguagesInContext(c)
-	return result.SuccessData(h.i18n.Translate("success_counter_get", l, a), count, fiber.StatusOK)
+	return result.SuccessData(h.i18n.Translate("success_counter_inc", l, a), count, fiber.StatusOK)
 }
 
 func (h *Handler) Dec(c *fiber.Ctx) error {
 	h.s.Dec()
 	count := h.s.Get()
 	l, a := h.i18n.GetLanguagesInContext(c)
-	return result.SuccessData(h.i18n.Translate("success_counter_inc", l, a), count, fiber.StatusOK)
+	return result.SuccessData(h.i18n.Translate("success_counter_dec", l, a), count, fiber.StatusOK)
 }
 
 func (h *Handler) Reset(c *fiber.Ctx) error {

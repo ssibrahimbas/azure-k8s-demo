@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter
+  template:
+    metadata:
+      labels:
+        app: counter
+    spec:
+      containers:
+        - name: counter
+          image: ssibrahimbas.com/azure-k8s/counter:latest
+          ports:
+            - containerPort: 7000
+          env:
+            - name: PORT
+              value: ":7000"
+            - name: HOST
+              value: "0.0.0.0"
+            - name: I18N_LOCALE_DIR
+              value: ./src/locales
+            - name: I18N_FALLBACK
+              value: en
+            - name: I18N_LOCALES
+              value: en,tr

@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: azure-k8s.dev
+      http:
+        paths:
+          - path: /api/counter?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: counter-srv
+                port:
+                  number: 7000
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: web-service
+                port:
+                  number: 3000

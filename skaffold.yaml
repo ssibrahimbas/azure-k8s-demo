@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+      - ./infra/k8s-dev/*
+build:
+  artifacts:
+    - image: ssibrahimbas.com/azure-k8s/counter
+      context: ./services.counter
+      docker:
+        dockerfile: Dockerfile
+    - image: ssibrahimbas/azure-k8s/web
+      context: ./services.web
+      docker:
+        dockerfile: Dockerfile
