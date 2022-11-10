@@ -1,0 +1,8 @@
+success_counter_get = "Count successfully fetched"
+success_counter_inc = "Count successfully incremented"
+success_counter_dec = "Count successfully decremented"
+success_counter_reset = "Count successfully reset"
+success_counter_set = "Count successfully set"
+
+error_invalid_request = "Invalid request"
+error_invalid_validation = "Invalid validation"

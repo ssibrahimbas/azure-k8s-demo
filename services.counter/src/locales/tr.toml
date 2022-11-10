@@ -1,0 +1,8 @@
+success_counter_get = "Sayı başarıyla alındı."
+success_counter_inc = "Sayı başarıyla arttırıldı."
+success_counter_dec = "Sayı başarıyla azaltıldı."
+success_counter_reset = "Sayı başarıyla sıfırlandı."
+success_counter_set = "Sayı başarıyla ayarlandı."
+
+error_invalid_request = "Geçersiz istek."
+error_invalid_validation = "Geçersiz doğrulama."
